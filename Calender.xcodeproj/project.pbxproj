@@ -17,6 +17,7 @@
 		EE2B27AA20412FED00C9D718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2B27A820412FED00C9D718 /* LaunchScreen.storyboard */; };
 		EE2B27B520412FED00C9D718 /* CalenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B27B420412FED00C9D718 /* CalenderTests.swift */; };
 		EE2B27C020412FED00C9D718 /* CalenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B27BF20412FED00C9D718 /* CalenderUITests.swift */; };
+		EEF297AC204160E4004FFD8B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF297AB204160E4004FFD8B /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		EE2B27BB20412FED00C9D718 /* CalenderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalenderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2B27BF20412FED00C9D718 /* CalenderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderUITests.swift; sourceTree = "<group>"; };
 		EE2B27C120412FED00C9D718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEF297AB204160E4004FFD8B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		FA8BDB400A4C606FE44D2F6F /* Pods-Calender.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calender.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calender/Pods-Calender.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				EE2B27A620412FED00C9D718 /* Assets.xcassets */,
 				EE2B27A820412FED00C9D718 /* LaunchScreen.storyboard */,
 				EE2B27AB20412FED00C9D718 /* Info.plist */,
+				EEF297AB204160E4004FFD8B /* DetailsViewController.swift */,
 			);
 			path = Calender;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 			files = (
 				EE2B27A220412FED00C9D718 /* ViewController.swift in Sources */,
 				EE2B27A020412FED00C9D718 /* AppDelegate.swift in Sources */,
+				EEF297AC204160E4004FFD8B /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

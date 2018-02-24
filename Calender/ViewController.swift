@@ -20,21 +20,21 @@ class ViewController: UIViewController,FSCalendarDelegate, FSCalendarDataSource,
         self.calendar.dataSource = self
         self.calendar.delegate = self
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-//    fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
-//    fileprivate lazy var dateFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd"
-//        return formatter
-//    }()
-
+    //    fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
+    //    fileprivate lazy var dateFormatter: DateFormatter = {
+    //        let formatter = DateFormatter()
+    //        formatter.dateFormat = "yyyy-MM-dd"
+    //        return formatter
+    //    }()
+    
     let tmpCalendar = Calendar(identifier: .gregorian)
-
+    
     func getDay(_ date:Date) -> (Int,Int,Int){
         let tmpCalendar = Calendar(identifier: .gregorian)
         let year = tmpCalendar.component(.year, from: date)
@@ -43,10 +43,19 @@ class ViewController: UIViewController,FSCalendarDelegate, FSCalendarDataSource,
         return (year,month,day)
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+        
+        let selectDay = getDay(date)
+        performSegueToDetails()
+        print(selectDay)
+    }
     
-    let selectDay = getDay(date)
-}
-
-
+    func performSegueToDetails(){
+        performSegue(withIdentifier: "toDetailsView", sender: nil)
+    }
+    //セグエを準備するときに呼ばれるメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let DetailsViewController = segue.destination as! DetailsViewController
+    }
+    
 }
 
