@@ -26,15 +26,15 @@ class ViewController: UIViewController,FSCalendarDelegate, FSCalendarDataSource,
         // Dispose of any resources that can be recreated.
     }
     
-    fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
-    fileprivate lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
-    
+//    fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
+//    fileprivate lazy var dateFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd"
+//        return formatter
+//    }()
+
     let tmpCalendar = Calendar(identifier: .gregorian)
-    
+
     func getDay(_ date:Date) -> (Int,Int,Int){
         let tmpCalendar = Calendar(identifier: .gregorian)
         let year = tmpCalendar.component(.year, from: date)
@@ -42,10 +42,11 @@ class ViewController: UIViewController,FSCalendarDelegate, FSCalendarDataSource,
         let day = tmpCalendar.component(.day, from: date)
         return (year,month,day)
     }
-    
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){}
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
     
     let selectDay = getDay(date)
+}
+
 
 }
 
