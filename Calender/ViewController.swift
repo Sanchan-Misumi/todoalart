@@ -33,9 +33,18 @@ class ViewController: UIViewController,FSCalendarDelegate, FSCalendarDataSource,
         return formatter
     }()
     
+    let tmpCalendar = Calendar(identifier: .gregorian)
+    
+    func getDay(_ date:Date) -> (Int,Int,Int){
+        let tmpCalendar = Calendar(identifier: .gregorian)
+        let year = tmpCalendar.component(.year, from: date)
+        let month = tmpCalendar.component(.month, from: date)
+        let day = tmpCalendar.component(.day, from: date)
+        return (year,month,day)
+    }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){}
-
+    
     let selectDay = getDay(date)
 
 }
