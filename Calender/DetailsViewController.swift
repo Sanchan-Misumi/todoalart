@@ -12,11 +12,19 @@ class DetailsViewController: UIViewController,UITextFieldDelegate {
 
     
     @IBOutlet var taskTextField: UITextField!
-    @IBOutlet var datePicker: UIDatePicker!
+//    @IBOutlet var datePicker: UIDatePicker!
     
 
     var saveData: UserDefaults = UserDefaults.standard
+    var datePicker = UIDatePicker() //DatePickerオブジェクト作成
+//    var todoItem = [String]()
+//    var datePicker = ""
     
+    @IBAction func DatePicker(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +41,7 @@ class DetailsViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func save(){
         
+        todoItem.append(taskTextField.text!)
         saveData.set(taskTextField.text, forKey: "Task")
         let alert: UIAlertController = UIAlertController(title:"タイトル", message: "本文を入れます。",preferredStyle: .alert)
         
@@ -53,6 +62,7 @@ class DetailsViewController: UIViewController,UITextFieldDelegate {
         taskTextField.resignFirstResponder()
         return true
     }
+    
     
     /*
     // MARK: - Navigation

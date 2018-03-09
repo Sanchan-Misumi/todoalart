@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="132.68365817091455"/>
+            <point key="canvasLocation" x="580" y="133"/>
         </scene>
         <!--Title-->
         <scene sceneID="aO6-xH-N8R">
@@ -55,6 +55,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="541151540.59400105">
                                     <!--2018-02-24 07:52:20 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="DatePicker" destination="waQ-bW-rd3" eventType="touchUpInside" id="TzM-oU-0wc"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhW-o7-IbW">
                                 <rect key="frame" x="170" y="475" width="34" height="30"/>
@@ -65,7 +68,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qod-ID-XnP">
-                                <rect key="frame" x="49" y="340" width="277" height="30"/>
+                                <rect key="frame" x="49" y="388" width="277" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -79,7 +82,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="nAK-7V-RHu"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePicker" destination="a0X-n0-7LQ" id="hcO-hg-l9l"/>
                         <outlet property="taskTextField" destination="Qod-ID-XnP" id="dmn-Vg-1zL"/>
                     </connections>
                 </viewController>
