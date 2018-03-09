@@ -70,7 +70,7 @@ class ViewController: UIViewController,FSCalendarDelegate, FSCalendarDataSource,
     }
     //セグエを準備するときに呼ばれるメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        let DetailsViewController = segue.destination as! DetailsViewController
+//        let DetailsViewController = segue.destination as! DetailsViewController
         if segue.identifier == "toDetailsView"{
             let DetailsViewController = segue.destination as! DetailsViewController
             DetailsViewController.todoItem = self.todoItem
