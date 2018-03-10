@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="oVe-e5-inm"/>
                     <connections>
                         <outlet property="calendar" destination="X1Z-TK-cHT" id="FGL-im-rlZ"/>
-                        <segue destination="waQ-bW-rd3" kind="show" identifier="toDetailsView" id="WR5-8r-ssE"/>
+                        <segue destination="waQ-bW-rd3" kind="show" identifier="todetailsView" id="WR5-8r-ssE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -56,33 +56,44 @@
                                     <!--2018-02-24 07:52:20 +0000-->
                                 </date>
                                 <connections>
-                                    <action selector="DatePicker" destination="waQ-bW-rd3" eventType="touchUpInside" id="TzM-oU-0wc"/>
+                                    <action selector="DatePicker" destination="waQ-bW-rd3" eventType="touchUpInside" id="GjN-ob-LNM"/>
                                 </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhW-o7-IbW">
-                                <rect key="frame" x="170" y="475" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="save" destination="waQ-bW-rd3" eventType="touchUpInside" id="9gq-0E-7SB"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qod-ID-XnP">
-                                <rect key="frame" x="49" y="388" width="277" height="30"/>
+                                <rect key="frame" x="49" y="329" width="277" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IgJ-fs-lXc">
+                                <rect key="frame" x="0.0" y="376" width="375" height="291"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cdy-D2-jVz">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cdy-D2-jVz" id="shv-Id-SVP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="rlU-Nh-d21"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Gja-dD-C1T">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nAK-7V-RHu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nAK-7V-RHu">
+                            <connections>
+                                <action selector="save" destination="waQ-bW-rd3" id="FHf-1x-lkq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="taskTextField" destination="Qod-ID-XnP" id="dmn-Vg-1zL"/>
+                        <outlet property="taskTextField" destination="Qod-ID-XnP" id="ukm-bk-Xpu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBw-QX-Bu3" userLabel="First Responder" sceneMemberID="firstResponder"/>

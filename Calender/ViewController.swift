@@ -16,7 +16,7 @@ class ViewController: UIViewController,FSCalendarDelegate, FSCalendarDataSource,
     
     var saveData: UserDefaults = UserDefaults.standard
     
-    var todoItem: [String]!
+    var todoItem: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,6 +25,9 @@ class ViewController: UIViewController,FSCalendarDelegate, FSCalendarDataSource,
         print(todoItem)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        <#code#>
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,19 +67,17 @@ class ViewController: UIViewController,FSCalendarDelegate, FSCalendarDataSource,
 //        UserDefaults.standard.string(todoItem, forKey: Constants.User.selectDay.rawValue)
         
     }
-    
+   
     func performSegueToDetails(){
-        performSegue(withIdentifier: "toDetailsView", sender: nil)
+        performSegue(withIdentifier: "todetailsView", sender: nil)
     }
     //セグエを準備するときに呼ばれるメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
 //        let DetailsViewController = segue.destination as! DetailsViewController
-        if segue.identifier == "toDetailsView"{
-            let DetailsViewController = segue.destination as! DetailsViewController
-            DetailsViewController.todoItem = self.todoItem
+        if segue.identifier == "todetailsView"{
+            let detailsViewController = segue.destination as! DetailsViewController
+            detailsViewController.todoItem = self.todoItem
         }
-        
     }
-    
 }
 

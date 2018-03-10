@@ -9,16 +9,15 @@
 import UIKit
 
 class DetailsViewController: UIViewController,UITextFieldDelegate {
-
+    
     
     @IBOutlet var taskTextField: UITextField!
-//    @IBOutlet var datePicker: UIDatePicker!
-    
+    //    @IBOutlet var datePicker: UIDatePicker!
 
     var saveData: UserDefaults = UserDefaults.standard
     var datePicker = UIDatePicker() //DatePickerオブジェクト作成
-//    var todoItem = [String]()
-//    var datePicker = ""
+    var todoItem = [String]()
+    //    var datePicker = ""
     
     @IBAction func DatePicker(){
         let formatter = DateFormatter()
@@ -27,13 +26,13 @@ class DetailsViewController: UIViewController,UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         taskTextField.delegate = self
         taskTextField.text = saveData.object(forKey: "Task") as? String
         // Do any additional setup after loading the view.
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,7 +41,7 @@ class DetailsViewController: UIViewController,UITextFieldDelegate {
     @IBAction func save(){
         
         todoItem.append(taskTextField.text!)
-        saveData.set(taskTextField.text, forKey: "Task")
+        saveData.set(todoItem, forKey: "Task")
         let alert: UIAlertController = UIAlertController(title:"タイトル", message: "本文を入れます。",preferredStyle: .alert)
         
         alert.addAction(
@@ -51,27 +50,32 @@ class DetailsViewController: UIViewController,UITextFieldDelegate {
                 style: .default,
                 handler: { action in
                     //          ボタンが押された時の動作
-                   self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
             }
-        )
+            )
         )
         present(alert, animated: true,completion: nil)
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         taskTextField.resignFirstResponder()
         return true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        taskTextField.text = String("")
+    }
+    
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+
